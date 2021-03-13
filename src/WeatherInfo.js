@@ -4,6 +4,8 @@ import Today from './Today';
 import Summary from './Summary';
 import Graph from './Graph';
 import './WeatherInfo.css';
+
+const API_KEY = '';
 export class WeatherInfo extends Component {
   constructor(props) {
     super(props);
@@ -16,7 +18,7 @@ export class WeatherInfo extends Component {
   }
   async handleSubmit(evt) {
     let weatherRes = await axios.get(
-      `http://api.openweathermap.org/data/2.5/forecast?q=${this.state.city}&appid=cd205c660f956316eccbe8e38a5e5993`
+      `http://api.openweathermap.org/data/2.5/forecast?q=${this.state.city}&appid=${API_KEY}`
     );
     this.setState({ data: weatherRes.data });
   }
