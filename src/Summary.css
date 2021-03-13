@@ -1,0 +1,18 @@
+.next {
+  display: flex;
+  border-radius: 10px;
+  /* background-color: blue; */
+  padding-left: 5%;
+  padding-right: 5%;
+  justify-content: space-between;
+  font-size: 1rem;
+  font-weight: 100;
+}
+
+.next--right {
+  display: flex;
+}
+
+.next__temperature {
+  margin-right: 10px;
+}

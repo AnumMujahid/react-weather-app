@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import Today from './Today';
 import Summary from './Summary';
 import Graph from './Graph';
+import './WeatherInfo.css';
 export class WeatherInfo extends Component {
   constructor(props) {
     super(props);
@@ -28,9 +29,24 @@ export class WeatherInfo extends Component {
     let x = this.state.data;
     return (
       <div>
-        <label htmlFor="city">City:</label>
-        <input name="city" onChange={this.handleChange} />
-        <button onClick={this.handleSubmit}>Find</button>
+        <div className="nav">
+          <div>
+            <h1 className="title">{'Weather Alert'.toUpperCase()}</h1>
+          </div>
+          <div className="search">
+            <label className="search__label" htmlFor="city"></label>
+            <br />
+            <input
+              name="city"
+              onChange={this.handleChange}
+              placeholder="Search"
+              className="search__input"
+            />
+            <button className="search__btn" onClick={this.handleSubmit}>
+              <i className="fas fa-search"></i>
+            </button>
+          </div>
+        </div>
         {this.state.data && this.state.data.cod === '200' && (
           <Today
             country={x.city.country}

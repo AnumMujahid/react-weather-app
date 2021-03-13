@@ -1,0 +1,54 @@
+.temperature {
+  display: flex;
+  justify-content: space-between;
+  /* background-color: khaki; */
+  border-radius: 25px;
+  padding-left: 5%;
+  padding-right: 5%;
+  padding-bottom: 40px;
+}
+
+.temperature__img {
+  width: 100px;
+  height: 100px;
+  margin-top: 30px;
+}
+
+.temperature__desc {
+  font-size: 1.5rem;
+  font-weight: 200;
+}
+
+.temperature__num {
+  font-size: 6rem;
+  font-weight: 300;
+  margin-bottom: 0;
+}
+
+.temperature--right {
+  text-align: right;
+}
+
+.detail {
+  display: flex;
+  justify-content: space-between;
+}
+
+.detail__item {
+  width: 23%;
+  text-align: center;
+  height: 150px;
+  padding-top: 20px;
+  /* background-color: magenta; */
+  border-radius: 25px;
+}
+
+.detail__heading {
+  font-size: 2rem;
+  font-weight: 500;
+}
+
+.detail__subheading {
+  font-size: 1.5rem;
+  font-weight: 200;
+}

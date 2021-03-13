@@ -1,27 +1,47 @@
 import React, { Component } from 'react';
-
+import './Today.css';
 export class Today extends Component {
   render() {
     return (
       <div>
-        <h1>{this.props.country}</h1>
-        <h1>{this.props.city}</h1>
-        <h1>{this.props.clouds}</h1>
-        <h1>{this.props.date}</h1>
-        <h1>{this.props.temperature}</h1>
-        <h1>{this.props.min_temp}</h1>
-        <h1>{this.props.max_temp}</h1>
-        <h1>{this.props.pressure}</h1>
-        <h1>{this.props.sea_level}</h1>
-        <h1>{this.props.ground_level}</h1>
-        <h1>{this.props.humidity}</h1>
-        <h1>{this.props.weather_main}</h1>
-        <h1>{this.props.weather_desc}</h1>
-        <h1>{this.props.wind_speed}</h1>
-        <h1>{this.props.wind_deg}</h1>
-        <h1>{this.props.rain}</h1>
-        <h1>{this.props.snow}</h1>
-        <img src={this.props.image} alt="" width="100" height="100" />
+        <div className="temperature">
+          <div>
+            <img src={this.props.image} alt="" className="temperature__img" />
+            <h1 className="temperature__desc">
+              {this.props.weather_desc.charAt(0).toUpperCase() +
+                this.props.weather_desc.slice(1)}
+            </h1>
+            <h1 className="temperature__desc">{this.props.date}</h1>
+          </div>
+          <div>
+            <h1 className="temperature__num">
+              {(this.props.temperature - 273.15).toFixed(2)}&#176;C
+            </h1>
+            <h1 className="temperature__desc temperature--right">
+              {this.props.city},&nbsp;{this.props.country}
+            </h1>
+          </div>
+        </div>
+        <div className="detail">
+          <div className="detail__item">
+            <h1 className="detail__heading">{this.props.clouds}&nbsp;%</h1>
+            <p className="detail__subheading">Clouds</p>
+          </div>
+          <div className="detail__item">
+            <h1 className="detail__heading">{this.props.pressure}&nbsp;hPa</h1>
+            <p className="detail__subheading">Pressure</p>
+          </div>
+          <div className="detail__item">
+            <h1 className="detail__heading">{this.props.humidity}&nbsp;%</h1>
+            <p className="detail__subheading">Humidity</p>
+          </div>
+          <div className="detail__item">
+            <h1 className="detail__heading">
+              {this.props.wind_speed}&nbsp;m/s
+            </h1>
+            <p className="detail__subheading">Wind</p>
+          </div>
+        </div>
       </div>
     );
   }
